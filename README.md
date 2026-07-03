@@ -1,6 +1,11 @@
-# Chan S — Portfolio
+# Chandru S — Portfolio
 
 This repository contains a premium, responsive personal portfolio website built with HTML5, CSS3, and Vanilla JavaScript.
+
+Profile details now included in the site:
+- Chandru S, Passionate Web & AI Developer
+- Education, technical skills, soft skills, languages, projects, and achievements
+- Contact links for phone, email, LinkedIn, and LeetCode
 
 Structure:
 
@@ -24,7 +29,8 @@ portfolio/
 ```
 
 Notes:
-- Replace image placeholders in `assets/images/` with optimized images (JPEG/WebP). 
+- Replace image placeholders in `assets/images/` with optimized images (JPEG/WebP).
+- Add your own profile picture to replace the current placeholder image.
 - Add a real resume PDF at `resume/ChanS_Resume.pdf`.
 - The site uses CDN-hosted libraries for animations (`GSAP`, `AOS`, `Typed.js`, `tsParticles`) — no build step required.
 

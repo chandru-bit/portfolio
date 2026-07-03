@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   // Typed.js
   if(window.Typed){
     const typed = new Typed('#typed',{
-      strings:['AI Developer','UI/UX Designer','Product Designer','Frontend Developer','Prompt Engineer'],
+      strings:['Web Developer','AI Developer','UI/UX Explorer','API Builder','Problem Solver'],
       typeSpeed:60,backSpeed:30,backDelay:1200,loop:true
     });
   }
