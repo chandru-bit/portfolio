@@ -45,8 +45,12 @@ img{max-width:100%;display:block;border-radius:10px}
 .profile-card{width:100%;padding:1.5rem;display:flex;gap:1rem;align-items:center}
 .profile-card .avatar img{width:120px;height:120px;object-fit:cover;border-radius:16px;box-shadow:0 6px 30px rgba(0,0,0,0.6)}
 .profile-meta h3{margin:0}
-.socials{display:flex;gap:.6rem;margin-top:1rem}
-.social img{width:28px;height:28px;filter:grayscale(1);opacity:.9}
+.socials{display:flex;gap:.75rem;margin-top:1rem;flex-wrap:wrap}
+.social-link{display:inline-flex;align-items:center;gap:.55rem;padding:.7rem .95rem;border:1px solid rgba(255,255,255,0.08);border-radius:999px;background:rgba(255,255,255,0.03);backdrop-filter:blur(8px);box-shadow:0 10px 24px rgba(0,0,0,0.15);transition:transform 220ms ease,box-shadow 220ms ease,border-color 220ms ease,background 220ms ease}
+.social-link img{width:22px;height:22px;filter:grayscale(1) brightness(1.2);opacity:1}
+.social-link span{font-size:.92rem;font-weight:600;color:#f4fbff}
+.social-link:hover{transform:translateY(-3px);border-color:rgba(0,229,255,0.35);box-shadow:0 16px 30px rgba(0,229,255,0.12),0 10px 30px rgba(0,0,0,0.2);background:rgba(0,229,255,0.07)}
+.social-link:focus-visible{outline:2px solid var(--primary);outline-offset:3px}
 /* Glass */
 .glass{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));backdrop-filter:blur(var(--glass-blur));border:1px solid rgba(255,255,255,0.06);border-radius:var(--radius)}
 .card{padding:1rem}
@@ -105,6 +109,7 @@ img{max-width:100%;display:block;border-radius:10px}
   .projects-grid{grid-template-columns:1fr}
   .experience-cards{grid-template-columns:1fr}
   .contact-grid{grid-template-columns:1fr}
+  .social-link{width:100%;justify-content:center}
 }
 /* Custom cursor */
 .custom-cursor{position:fixed;left:0;top:0;width:18px;height:18px;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);background:linear-gradient(90deg,var(--primary),var(--secondary));box-shadow:0 6px 18px rgba(0,229,255,0.12);mix-blend-mode:screen;transition:width 160ms ease,height 160ms ease,opacity 160ms}
