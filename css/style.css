@@ -106,6 +106,33 @@ img{max-width:100%;display:block;border-radius:10px}
   .experience-cards{grid-template-columns:1fr}
   .contact-grid{grid-template-columns:1fr}
 }
+/* Custom cursor */
+.custom-cursor{position:fixed;left:0;top:0;width:18px;height:18px;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);background:linear-gradient(90deg,var(--primary),var(--secondary));box-shadow:0 6px 18px rgba(0,229,255,0.12);mix-blend-mode:screen;transition:width 160ms ease,height 160ms ease,opacity 160ms}
+.custom-cursor.cursor-large{width:40px;height:40px;opacity:0.95}
+
+.btn{position:relative;overflow:hidden}
+.btn .ripple{position:absolute;border-radius:50%;transform:translate(-50%,-50%);pointer-events:none;opacity:0.6;background:rgba(255,255,255,0.12);animation:ripple 700ms forwards}
+@keyframes ripple{from{opacity:0.8;transform:translate(-50%,-50%) scale(0.2)}to{opacity:0;transform:translate(-50%,-50%) scale(2.2)}}
+
+.hero-left h1{font-size:2.6rem;margin:0;line-height:1.02;background:linear-gradient(90deg,var(--primary),var(--secondary));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-left h1 .name{display:inline-block;padding:0 .15rem;border-radius:8px}
+
+.glass:hover{transform:translateY(-6px);transition:transform 260ms ease;box-shadow:0 20px 50px rgba(0,0,0,0.5)}
+
+.project-card img{transition:transform 420ms cubic-bezier(.2,.9,.3,1)}
+.project-card:hover img{transform:scale(1.05) rotate(-0.6deg)}
+
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
+.testimonial{padding:1rem;border-radius:12px}
+.testimonial p{font-size:0.98rem;color:var(--muted)}
+.testimonial cite{display:block;margin-top:.75rem;color:var(--primary);font-size:.85rem}
+
+.blobs{position:fixed;inset:0;pointer-events:none;z-index:1}
+.blob{position:absolute;filter:blur(36px);opacity:0.18;border-radius:50%;mix-blend-mode:screen}
+.blob-1{width:420px;height:420px;left:-80px;top:10%;background:linear-gradient(45deg,var(--primary),var(--accent))}
+.blob-2{width:300px;height:300px;right:-60px;top:25%;background:linear-gradient(45deg,var(--secondary),var(--primary))}
+.blob-3{width:220px;height:220px;left:20%;bottom:-60px;background:linear-gradient(45deg,var(--accent),var(--secondary))}
+
 /* theme overrides for light mode (script toggles `light` on body) */
 body.light{--bg:#f7fbfd;color:#04202a}
 body.light .glass{background:linear-gradient(180deg, rgba(255,255,255,0.65), rgba(255,255,255,0.6));backdrop-filter:blur(6px);border:1px solid rgba(0,0,0,0.04)}

@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Chan S — AI Developer, UI/UX Designer, Product & Frontend Developer. Designing Intelligent Experiences with AI and Modern Web Technologies.">
+  <title>Chan S — AI Developer & Designer</title>
+  <link rel="icon" href="assets/icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script defer src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.min.js"></script>
+  <script defer src="js/animations.js"></script>
+  <script defer src="js/script.js"></script>
+</head>
+<body class="dark">
+  <div id="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+
+  <div id="particles"></div>
+
+  <!-- Floating decorative blobs for premium visual flair -->
+  <div class="blobs" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="index.html">Chan S</a>
+      <button id="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
+      <ul id="nav-menu" class="nav-menu" role="menubar">
+        <li><a href="#home">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="theme-toggle" aria-pressed="false" title="Toggle theme">🌙</button>
+        <button id="color-toggle" title="Switch primary color">🎨</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero container">
+      <div class="hero-left" data-aos="fade-right">
+        <h1>Hi, I'm <span class="name">Chan S</span></h1>
+        <p class="title">AI Developer • UI/UX Designer • Product & Frontend Developer</p>
+        <p class="tagline">Designing Intelligent Experiences with AI and Modern Web Technologies.</p>
+        <div class="typing"><span id="typed"></span></div>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#projects">View Projects</a>
+          <a class="btn btn-ghost" href="resume/ChanS_Resume.pdf" download>Download Resume</a>
+        </div>
+        <div class="socials" aria-label="Social media">
+          <a href="#" aria-label="LinkedIn" class="social"><img src="assets/icons/linkedin.svg" alt="LinkedIn"></a>
+          <a href="#" aria-label="GitHub" class="social"><img src="assets/icons/github.svg" alt="GitHub"></a>
+          <a href="#" aria-label="Twitter" class="social"><img src="assets/icons/twitter.svg" alt="Twitter"></a>
+        </div>
+      </div>
+      <div class="hero-right" data-aos="fade-left">
+        <div class="profile-card glass">
+          <div class="avatar">
+            <img src="assets/images/profile-placeholder.jpg" alt="Chan S" loading="lazy">
+          </div>
+          <div class="profile-meta">
+            <h3>Chan S</h3>
+            <p>AI Developer & Designer</p>
+            <a href="contact.html" class="btn btn-outline">Hire Me</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about container" aria-labelledby="about-heading" data-aos="fade-up">
+      <h2 id="about-heading">About Me</h2>
+      <p>I am a passionate Computer Science student with experience in AI-powered applications, UX and Product Design, Frontend development, and Java programming. I enjoy creating user-friendly digital experiences and solving real-world problems through technology.</p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">2024</div>
+          <div class="timeline-body">
+            <h4>AI Shopping Assistant</h4>
+            <p>Built a personalized e-commerce assistant using Streamlit and Gemini AI.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2023</div>
+          <div class="timeline-body">
+            <h4>Travel Vibe Mapper</h4>
+            <p>AI travel recommendation platform with interactive map and mood-based suggestions.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="experience-cards">
+        <article class="card glass" data-aos="fade-up">
+          <h3>Frontend Developer</h3>
+          <p>Building accessible, responsive UIs with emphasis on performance and UX.</p>
+        </article>
+        <article class="card glass" data-aos="fade-up" data-aos-delay="100">
+          <h3>AI Researcher</h3>
+          <p>Experimenting with generative models and prompt engineering for product features.</p>
+        </article>
+        <article class="card glass" data-aos="fade-up" data-aos-delay="200">
+          <h3>Product Designer</h3>
+          <p>Designing end-to-end product experiences using Figma and user research methods.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="skills container" data-aos="fade-up">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skill">
+          <h4>JavaScript</h4>
+          <div class="skill-bar"><div class="fill" style="--pct:90%"></div></div>
+        </div>
+        <div class="skill">
+          <h4>Java</h4>
+          <div class="skill-bar"><div class="fill" style="--pct:85%"></div></div>
+        </div>
+        <div class="skill">
+          <h4>Python</h4>
+          <div class="skill-bar"><div class="fill" style="--pct:80%"></div></div>
+        </div>
+        <div class="skill-circles">
+          <div class="circle" data-pct="90"><svg viewBox="0 0 36 36"><path class="bg" d="M18 2.0845a15.9155 15.9155 0 1 0 0 31.831 15.9155 15.9155 0 1 0 0-31.831"/><path class="meter" d="M18 2.0845a15.9155 15.9155 0 1 0 0 31.831" stroke-dasharray="90,100"/></svg><span>React</span></div>
+          <div class="circle" data-pct="75"><svg viewBox="0 0 36 36"><path class="bg" d="M18 2.0845a15.9155 15.9155 0 1 0 0 31.831 15.9155 15.9155 0 1 0 0-31.831"/><path class="meter" d="M18 2.0845a15.9155 15.9155 0 1 0 0 31.831" stroke-dasharray="75,100"/></svg><span>Figma</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects container" data-aos="fade-up">
+      <h2>Featured Projects</h2>
+
+      <div class="projects-controls">
+        <input id="project-search" placeholder="Search projects..." aria-label="Search projects">
+        <div class="filters">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="ai">AI</button>
+          <button class="filter" data-filter="web">Web</button>
+          <button class="filter" data-filter="design">Design</button>
+        </div>
+      </div>
+
+      <div class="projects-grid" id="projects-grid">
+        <article class="project-card glass" data-category="ai" data-aos="zoom-in">
+          <img src="assets/images/project1.jpg" alt="Travel Vibe Mapper" loading="lazy">
+          <div class="project-body">
+            <h3>Travel Vibe Mapper</h3>
+            <p>AI travel recommendation platform that suggests destinations based on mood.</p>
+            <div class="project-actions">
+              <a class="btn btn-sm" href="#">Live Demo</a>
+              <a class="btn btn-ghost btn-sm" href="#">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card glass" data-category="ai web" data-aos="zoom-in" data-aos-delay="100">
+          <img src="assets/images/project2.jpg" alt="AI Shopping Assistant" loading="lazy">
+          <div class="project-body">
+            <h3>AI Shopping Assistant</h3>
+            <p>Personalized e-commerce assistant built with Streamlit and Gemini AI.</p>
+            <div class="project-actions">
+              <a class="btn btn-sm" href="#">Live Demo</a>
+              <a class="btn btn-ghost btn-sm" href="#">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card glass" data-category="web design" data-aos="zoom-in" data-aos-delay="200">
+          <img src="assets/images/project3.jpg" alt="Portfolio Website" loading="lazy">
+          <div class="project-body">
+            <h3>Portfolio Website</h3>
+            <p>Premium portfolio showcasing skills, projects, and achievements.</p>
+            <div class="project-actions">
+              <a class="btn btn-sm" href="#">Live Demo</a>
+              <a class="btn btn-ghost btn-sm" href="#">GitHub</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+    </section>
+
+    <section id="achievements" class="achievements container" data-aos="fade-up">
+      <h2>Achievements</h2>
+      <div class="stats">
+        <div class="stat card glass">
+          <h3 class="count" data-target="120">0</h3>
+          <p>Projects</p>
+        </div>
+        <div class="stat card glass">
+          <h3 class="count" data-target="5000">0</h3>
+          <p>Hours</p>
+        </div>
+        <div class="stat card glass">
+          <h3 class="count" data-target="50">0</h3>
+          <p>Contributions</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="resume" class="resume container" data-aos="fade-up">
+      <h2>Resume</h2>
+      <div class="resume-preview glass">
+        <object data="resume/ChanS_Resume.pdf" type="application/pdf" width="100%" height="500">
+          <p>Your browser does not support embedding PDFs. <a href="resume/ChanS_Resume.pdf">Download the resume</a>.</p>
+        </object>
+      </div>
+      <a class="btn btn-primary" href="resume/ChanS_Resume.pdf" download>Download Resume</a>
+    </section>
+
+    <section id="contact" class="contact container" data-aos="fade-up">
+      <h2>Contact</h2>
+      <div class="contact-grid">
+        <form id="contact-form" class="contact-form glass" novalidate>
+          <label for="name">Name</label>
+          <input id="name" name="name" required>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+          <button class="btn btn-primary" type="submit">Send Message</button>
+        </form>
+        <aside class="contact-info glass">
+          <h3>Get in touch</h3>
+          <p><strong>Email:</strong> hello@chans.dev</p>
+          <p><strong>Phone:</strong> +1-555-000-0000</p>
+          <p><strong>LinkedIn:</strong> <a href="#">linkedin.com/in/chans</a></p>
+          <p><strong>GitHub:</strong> <a href="#">github.com/chans</a></p>
+        </aside>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-left">© <span id="year"></span> Chan S</div>
+      <div class="footer-right">
+        <a href="#" class="social"><img src="assets/icons/github.svg" alt="GitHub"></a>
+        <a href="#" class="social"><img src="assets/icons/linkedin.svg" alt="LinkedIn"></a>
+      </div>
+    </div>
+    <button id="back-to-top" title="Back to top">↑</button>
+  </footer>
+
+  <!-- Custom cursor -->
+  <div id="custom-cursor" class="custom-cursor" aria-hidden="true"></div>
+
+</body>
+</html>

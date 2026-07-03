@@ -30,6 +30,12 @@ document.addEventListener('DOMContentLoaded',()=>{
       .from('.hero-left h1',{y:20,opacity:0,duration:0.6},'-=0.4')
       .from('.hero-right .profile-card',{scale:0.98,opacity:0,duration:0.6},'-=0.4')
       .from('.nav-menu a',{y:-8,opacity:0,stagger:0.05,duration:0.4},'-=0.6');
+    // gentle floating animation for decorative blobs
+    try{
+      gsap.to('.blob-1',{y:30,x:20,repeat:-1,yoyo:true,ease:'sine.inOut',duration:6,opacity:0.18});
+      gsap.to('.blob-2',{y:-20,x:-10,repeat:-1,yoyo:true,ease:'sine.inOut',duration:8,opacity:0.16});
+      gsap.to('.blob-3',{y:18,x:8,repeat:-1,yoyo:true,ease:'sine.inOut',duration:7,opacity:0.14});
+    }catch(e){/* ignore if gsap can't animate */}
   }
 
   // Floating subtle parallax for hero image on mouse

@@ -122,4 +122,34 @@ document.addEventListener('DOMContentLoaded',()=>{
       }
     });
   });
+
+  // Custom cursor
+  const cursor = document.getElementById('custom-cursor');
+  if(cursor){
+    window.addEventListener('mousemove', e=>{
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+    // enlarge when over interactive elements
+    const interactive = 'a, button, .btn, input, textarea, .project-card';
+    document.querySelectorAll(interactive).forEach(el=>{
+      el.addEventListener('mouseenter',()=>cursor.classList.add('cursor-large'));
+      el.addEventListener('mouseleave',()=>cursor.classList.remove('cursor-large'));
+    });
+  }
+
+  // Ripple effect for buttons
+  document.querySelectorAll('.btn').forEach(btn=>{
+    btn.addEventListener('click', e=>{
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const ripple = document.createElement('span');
+      ripple.className = 'ripple';
+      ripple.style.left = x + 'px';
+      ripple.style.top = y + 'px';
+      btn.appendChild(ripple);
+      setTimeout(()=>{ripple.remove();},800);
+    });
+  });
 });
