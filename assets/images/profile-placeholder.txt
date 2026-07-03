@@ -1,0 +1,4 @@
+This is a placeholder for profile image files.
+Please replace this file with a real profile image at:
+assets/images/profile-placeholder.jpg
+Recommended size: 600x600px, optimized and exported as JPEG or WebP.

@@ -1,0 +1,4 @@
+Placeholder resume file. Please replace with a real PDF at:
+resume/ChanS_Resume.pdf
+
+Suggested: export a high-quality PDF from your CV and name it ChanS_Resume.pdf

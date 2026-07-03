@@ -1,0 +1,15 @@
+/* Additional responsive rules and small-screen refinements */
+:root{--mobile-gap:1rem}
+@media (max-width:900px){
+  .container{padding:1.2rem}
+  .hero-left h1{font-size:1.8rem}
+  .hero-right{display:flex;justify-content:center}
+}
+@media (max-width:640px){
+  .nav{padding:0.5rem}
+  #nav-menu{position:fixed;inset:auto 0 0 0;background:linear-gradient(180deg, rgba(7,19,31,0.97), rgba(5,18,26,0.98));padding:1rem;border-top-left-radius:12px;border-top-right-radius:12px;display:flex;flex-direction:column;gap:.5rem}
+  #nav-toggle[aria-expanded="false"] + #nav-menu{display:none}
+  .hero{padding:2rem 0}
+  .projects-grid{grid-template-columns:1fr}
+  .skills-grid{grid-template-columns:1fr}
+}

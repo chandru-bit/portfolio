@@ -1,0 +1,2 @@
+Placeholder for project3 image (Portfolio Website).
+Replace with assets/images/project3.jpg (recommend 1200x700 optimized).

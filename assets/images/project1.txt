@@ -1,0 +1,2 @@
+Placeholder for project1 image (Travel Vibe Mapper).
+Replace with assets/images/project1.jpg (recommend 1200x700 optimized).
