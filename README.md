@@ -38,4 +38,11 @@ Local test:
 
 Open `index.html` in a browser (or use a local static server) to preview.
 
+Netlify deploy:
+
+1. Connect the repository in Netlify.
+2. Set the publish directory to the project root: `.`
+3. Leave the build command empty because this site is plain HTML, CSS, and JavaScript.
+4. Deploy the site.
+
 Want me to: run a quick local server, add example images, or deploy to GitHub Pages? Reply with what you prefer.
