@@ -1,6 +1,6 @@
 # Chandru S — Portfolio
 
-This repository contains a premium, responsive personal portfolio website built with HTML5, CSS3, and Vanilla JavaScript.
+This repository contains a premium, responsive personal portfolio website built with React, HTML, CSS, and JavaScript.
 
 Profile details now included in the site:
 - Chandru S, Passionate Web & AI Developer
@@ -36,13 +36,13 @@ Notes:
 
 Local test:
 
-Open `index.html` in a browser (or use a local static server) to preview.
+Open `index.html` in a browser or use a static server to preview the React app.
 
 Netlify deploy:
 
 1. Connect the repository in Netlify.
 2. Set the publish directory to the project root: `.`
-3. Leave the build command empty because this site is plain HTML, CSS, and JavaScript.
+3. Leave the build command empty because the app runs directly in the browser with React CDN scripts.
 4. Deploy the site.
 
 Want me to: run a quick local server, add example images, or deploy to GitHub Pages? Reply with what you prefer.
