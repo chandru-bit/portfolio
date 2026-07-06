@@ -16,6 +16,13 @@
 </head>
 <body>
   <div id="root"></div>
+  <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+    <input type="hidden" name="form-name" value="contact">
+    <input type="hidden" name="bot-field">
+    <input type="text" name="name">
+    <input type="email" name="email">
+    <textarea name="message"></textarea>
+  </form>
   <script defer src="js/app.js"></script>
 </body>
 </html>

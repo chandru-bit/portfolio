@@ -215,15 +215,32 @@ function App() {
     }
   }
 
-  function handleMessageSubmit(event) {
+  async function handleMessageSubmit(event) {
     event.preventDefault();
     if (!messageState.name || !messageState.email || !messageState.message) {
       setMessageFeedback('Fill in name, email, and message.');
       return;
     }
 
-    setMessageFeedback('Thanks. This demo form is ready for a backend or Netlify Forms next.');
-    setMessageState({ name: '', email: '', message: '' });
+    const formData = new FormData(event.currentTarget);
+    formData.set('form-name', 'contact');
+
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString(),
+      });
+
+      if (!response.ok && response.status !== 0) {
+        throw new Error('Submit failed');
+      }
+
+      setMessageFeedback('Message sent. I will reply by email soon.');
+      setMessageState({ name: '', email: '', message: '' });
+    } catch {
+      setMessageFeedback('This preview cannot send email. Deploy to Netlify to receive form messages.');
+    }
   }
 
   function h(tag, props, ...children) {
@@ -373,13 +390,15 @@ function App() {
       h('section', { id: 'contact', className: 'contact container' },
         h('h2', null, 'Contact'),
         h('div', { className: 'contact-grid' },
-          h('form', { id: 'contact-form', className: 'contact-form glass', onSubmit: handleMessageSubmit },
+          h('form', { id: 'contact-form', name: 'contact', className: 'contact-form glass', method: 'POST', 'data-netlify': 'true', 'netlify-honeypot': 'bot-field', onSubmit: handleMessageSubmit },
+            h('input', { type: 'hidden', name: 'form-name', value: 'contact' }),
+            h('input', { type: 'hidden', name: 'bot-field', value: '' }),
             h('label', { htmlFor: 'name' }, 'Name'),
-            h('input', { id: 'name', type: 'text', value: messageState.name, onChange: (event) => setMessageState({ ...messageState, name: event.target.value }) }),
+            h('input', { id: 'name', name: 'name', type: 'text', value: messageState.name, onChange: (event) => setMessageState({ ...messageState, name: event.target.value }) }),
             h('label', { htmlFor: 'email' }, 'Email'),
-            h('input', { id: 'email', type: 'email', value: messageState.email, onChange: (event) => setMessageState({ ...messageState, email: event.target.value }) }),
+            h('input', { id: 'email', name: 'email', type: 'email', value: messageState.email, onChange: (event) => setMessageState({ ...messageState, email: event.target.value }) }),
             h('label', { htmlFor: 'message' }, 'Message'),
-            h('textarea', { id: 'message', rows: 5, value: messageState.message, onChange: (event) => setMessageState({ ...messageState, message: event.target.value }) }),
+            h('textarea', { id: 'message', name: 'message', rows: 5, value: messageState.message, onChange: (event) => setMessageState({ ...messageState, message: event.target.value }) }),
             h('button', { className: 'btn btn-primary', type: 'submit' }, 'Send Message'),
             messageFeedback ? h('p', { style: { color: 'var(--accent)', marginTop: '0.75rem' } }, messageFeedback) : null,
           ),

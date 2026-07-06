@@ -45,4 +45,8 @@ Netlify deploy:
 3. Leave the build command empty because the app runs directly in the browser with React CDN scripts.
 4. Deploy the site.
 
+Contact form:
+
+The contact form uses Netlify Forms. It will only deliver messages after the site is deployed on Netlify, not in the local preview server.
+
 Want me to: run a quick local server, add example images, or deploy to GitHub Pages? Reply with what you prefer.
