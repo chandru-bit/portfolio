@@ -4,9 +4,9 @@ const { useEffect, useMemo, useState } = React;
 const rolePhrases = ['Web Developer', 'AI Builder', 'UI Systems Thinker', 'Automation Explorer'];
 
 const accentThemes = [
-  { name: 'Ocean', primary: '#00E5FF', secondary: '#7C3AED', accent: '#00FFC6' },
-  { name: 'Sunset', primary: '#FF7A59', secondary: '#FFD66B', accent: '#FF66B3' },
-  { name: 'Aurora', primary: '#67E8F9', secondary: '#22C55E', accent: '#A78BFA' },
+  { name: 'Forest', primary: '#00C853', secondary: '#0288D1', accent: '#6DF5A5' },
+  { name: 'Sea Glass', primary: '#00A86B', secondary: '#0091EA', accent: '#7CE0FF' },
+  { name: 'Mint Sky', primary: '#2ECC71', secondary: '#1E88E5', accent: '#B2F7EF' },
 ];
 
 const timeline = [
@@ -153,12 +153,23 @@ function App() {
   const [copyStatus, setCopyStatus] = useState('');
   const [messageState, setMessageState] = useState({ name: '', email: '', message: '' });
   const [messageFeedback, setMessageFeedback] = useState('');
+  const [homeVisible, setHomeVisible] = useState(() => window.scrollY < 120);
   const [statsRef, statsVisible] = useInView();
   const rotatingRole = useRotatingText(rolePhrases);
 
   useEffect(() => {
     const timer = window.setTimeout(() => setBooted(true), 500);
     return () => window.clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const updateHomeVisibility = () => {
+      setHomeVisible(window.scrollY < 120);
+    };
+
+    updateHomeVisibility();
+    window.addEventListener('scroll', updateHomeVisibility, { passive: true });
+    return () => window.removeEventListener('scroll', updateHomeVisibility);
   }, []);
 
   useEffect(() => {
@@ -224,9 +235,8 @@ function App() {
     null,
     !booted && h('div', { id: 'loader', 'aria-hidden': 'true' }, h('div', { className: 'loader-inner' }, h('div', { className: 'dot' }), h('div', { className: 'dot' }), h('div', { className: 'dot' }))),
     h('div', { className: 'blobs', 'aria-hidden': 'true' }, h('div', { className: 'blob blob-1' }), h('div', { className: 'blob blob-2' }), h('div', { className: 'blob blob-3' })),
-    h('header', { className: 'site-header' },
+    homeVisible ? h('header', { className: 'site-header' },
       h('nav', { className: 'nav container', 'aria-label': 'Primary' },
-        h('a', { className: 'brand', href: '#home' }, 'Chandru S'),
         h('button', {
           id: 'nav-toggle',
           'aria-expanded': navOpen,
@@ -254,7 +264,7 @@ function App() {
           }, '🎨'),
         ),
       ),
-    ),
+    ) : null,
     h('main', null,
       h('section', { id: 'home', className: 'hero container' },
         h('div', { className: 'hero-left' },
